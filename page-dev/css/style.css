@@ -75,6 +75,10 @@
     margin: 2.5rem;
 }
 
+.m-25-top {
+    margin-top: 2.5rem;
+}
+
 .m-5-top {
     margin-top: 5rem;
 }
@@ -99,4 +103,45 @@
     position:fixed;
     z-index: -1;
     opacity: 0.1;
+}
+
+#editor {
+    color: #eeeeee;
+    font-family: "Charter", sans-serif;
+    border-radius: 5px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+        background: rgba( 238, 238, 238, 0.66 );
+    backdrop-filter: blur( 8.0px );
+        -webkit-backdrop-filter: blur( 8.0px );
+    color: #212121;
+}
+
+.ql-toolbar .ql-stroke {
+    fill: none;
+    stroke: #eeeeee !important;
+    border-radius: 5px;
+}
+
+.ql-snow {
+    border-radius: 5px;
+}
+
+.ql-toolbar .ql-fill {
+    fill: #eeeeee !important;
+    stroke: none;
+    border-radius: 5px;
+}
+
+.ql-toolbar .ql-picker {
+    color: #eeeeee !important;
+    border-radius: 5px;
+}
+
+.ql-picker-options {
+    background: #eeeeee;
+    border-radius: 5px;
+    color: #424242;
 }
