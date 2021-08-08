@@ -1,15 +1,10 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const app = require('./app');
+const initDb = require('./utils/db_connect');
 const checkDbConnection = require('./utils/checkDbConnection');
 
-//Initialize Sequelize
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
-    host: 'localhost',
-    dialect: 'mysql'
-});
-
-checkDbConnection(sequelize);
+checkDbConnection();
 
 //START SERVER
 const port = process.env.PORT || 4007;

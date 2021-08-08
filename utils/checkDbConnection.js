@@ -1,6 +1,7 @@
 const catchAsync = require("./catchAsync");
+const sequelize = require("./db_connect");
 
-module.exports = catchAsync(async (sequelize) => {
+module.exports = catchAsync(async () => {
     //Check connection
     try {
         await sequelize.authenticate();
