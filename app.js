@@ -2,6 +2,7 @@ const express = require('express');
 const bars = require('express-handlebars');
 const catchAsync = require('./utils/catchAsync');
 
+
 const app = express();
 
 app.engine('handlebars', bars());
