@@ -35,8 +35,23 @@ exports.getFeatured = catchAsync(async (req, res, next) => {
 exports.createNew = catchAsync(async (req, res, next) => {
     let article = req.body;
     article.stats = JSON.stringify(readingTime(article.content));
+    if (article.featured === 'on') {
+        article.featured = true;
+    } else {
+        article.featured = false;
+    }
+    console.log(article);
+    console.log(req.session.username);
+    let user_id = await User.findAll({
+        where: {
+            email: req.session.username
+        },
+        attributes: ['id']
+    })
 
-    postResponder(res, await Article.create(article));
+    article.user_id = user_id[0].dataValues.id;
+    await Article.create(article);
+    res.redirect('/')
 })
 
 exports.getArticle = catchAsync(async (req, res, next) => {

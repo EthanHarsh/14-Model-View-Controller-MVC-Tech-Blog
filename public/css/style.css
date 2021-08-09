@@ -12,6 +12,18 @@
     border-radius: 3px;
 }
 
+.writing-area {
+    height: 33vh !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur( 15.0px ) !important;
+        -webkit-backdrop-filter: blur( 15.0px ) !important;
+    color: #212121 !important;
+    cursor: pointer !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+    border-radius: 5px !important;
+}
+
 .reading {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur( 15.0px );

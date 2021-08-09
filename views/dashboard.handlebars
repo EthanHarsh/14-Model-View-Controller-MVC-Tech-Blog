@@ -1,33 +1,52 @@
 <div class="animate__animated animate__fadeIn">
     <video id="videoBG" autoplay muted loop>
         <source src="video/particles.mp4" type="video/mp4">
+        <source src="video/particles/particles.webm" type="video/webm">
     </video>
 </div>
 <main class="container animate__animated animate__fadeIn m-5-top">
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" method="POST" action="/api/v1/articles">
             <div class="row">
-                <div class="input-field col s12">
-                    <input id="title" type="text" class="validate">
-                    <label for="title">Title</label>
+                <div class="input-field col s6">
+                    <input id="title" type="text" name="title" class="validate grey-text text-lighten-3 charter">
+                    <label for="title" class="grey-text text-lighten-3 charter">Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="subtitle" type="text" class="validate grey-text text-lighten-3 charter" name="subtitle">
+                    <label for="subtitle" class="grey-text text-lighten-3 charter">Subtitle</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s3">
+                    <input id="topic" type="text" name="topic" class="validate grey-text text-lighten-3 charter">
+                    <label for="topic" class="grey-text text-lighten-3 charter">Topic</label>
+                </div>
+                <div class="input-field col s3">
+                    <p>
+                        <label>
+                            <input type="checkbox" name="featured" />
+                            <span class="grey-text text-lighten-3 charter">Featured?</span>
+                        </label>
+                    </p>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="title" type="text" class="validate">
-                    <label for="topic">Topic</label>
+                    <textarea id="textarea1" class="materialize-textarea writing-area corner-med zero charter p-1"
+                        name="content"></textarea>
                 </div>
+            </div>
+            <div class="row">
+                <button
+                    class="btn-large waves-effect waves-light m-1-top corner-med transparent border-grey grey-text text-lighten-3 roboto 400"
+                    type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
         </form>
     </div>
-
-    <!-- Create the editor container -->
-    <div id="editor">
-        <h1>Type your article here!</h1>
-    </div>
-
-    <button
-        class="btn-large waves-effect waves-light m-25-top corner-med transparent border-grey grey-text text-lighten-3 roboto 400">Submit
-        <i class="material-icons right">send</i>
-    </button>
 </main>
+<script src="javscript/dashboard.js"></script>
