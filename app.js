@@ -13,6 +13,7 @@ app.set('view engine', 'handlebars')
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));
+
 var sess = {
     secret: process.env.SECRET,
     saveUninitialized: false,
@@ -26,6 +27,10 @@ if (process.env.STATE === 'production') {
 }
 
 app.use(session(sess));
+app.use(function (req, res, next) {
+    res.locals.session = req.session;
+    next();
+});
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
     next();

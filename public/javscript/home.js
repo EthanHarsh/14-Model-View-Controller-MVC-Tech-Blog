@@ -24,7 +24,7 @@ fetch('/api/v1/articles/page')
                 $('#main').addClass('animate__fadeOut');
                 $('#vid-contain').addClass('animate__fadeOut');
                 setTimeout(() => {
-                    window.location.href = `/articles/${title}`;
+                    window.location.href = `/${title}`;
                 }, 500)
             })
         })
@@ -46,7 +46,7 @@ fetch('/api/v1/articles/featured')
                 $('#main').addClass('animate__fadeOut');
                 $('#vid-contain').addClass('animate__fadeOut');
                 setTimeout(() => {
-                    window.location.href = `/articles/${title}`;
+                    window.location.href = `/${title}`;
                 }, 500)
             })
             i++;

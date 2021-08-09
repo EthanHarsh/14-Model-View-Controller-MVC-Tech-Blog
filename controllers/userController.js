@@ -6,18 +6,22 @@ const catchAsync = require('../utils/catchAsync');
 
 
 exports.getAll = catchAsync(async (req, res, next) => {
-    responder(res, await User.findAll());
+    responder(res, await User.findAll({
+        attributes: { exclude: ["password", "email"] }
+    }));
 })
 
 exports.getAllPage = catchAsync(async (req, res, next) => {
     responder(res, await User.findAndCountAll({
-        limit: 25
+        limit: 25,
+        attributes: { exclude: ["password", "email"] }
     }));
 })
 
 exports.auth = catchAsync(async (req, res, next) => {
     let user = req.body;
-    //console.log(user.password);
+    console.log('user=s')
+    console.log(user);
     let db_user = await User.findAll({
         where: {
             email: user.email
@@ -37,8 +41,10 @@ exports.auth = catchAsync(async (req, res, next) => {
                     req.session.cookie.maxAge = 14 * 24 * hour;
                     req.session.loggedIn = true;
                     req.session.username = user.email
-                    //console.log(req.session);
-                    responder(res, result)
+                    console.log(req.session);
+                    //responder(res, result)
+                    res.redirect('/');
+
                 }
             }
         })

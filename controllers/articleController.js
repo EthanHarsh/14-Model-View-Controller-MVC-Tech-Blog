@@ -1,4 +1,4 @@
-const { Article } = require('./../models/index');
+const { Article, User } = require('./../models/index');
 const readingTime = require('reading-time');
 
 const { responder, postResponder, updateResponder, deleteResponder } = require('./../utils/responders/index');
@@ -37,4 +37,19 @@ exports.createNew = catchAsync(async (req, res, next) => {
     article.stats = JSON.stringify(readingTime(article.content));
 
     postResponder(res, await Article.create(article));
+})
+
+exports.getArticle = catchAsync(async (req, res, next) => {
+    let title = req.params.title;
+    responder(res, await Article.findAll({
+        where: {
+            title: title
+        },
+        include: [
+            {
+                model: User,
+                attributes: { exclude: ["password", "email"] }
+            }
+        ]
+    }))
 })
