@@ -1,4 +1,4 @@
-const { User } = require('./../models/index');
+const { User, Article } = require('./../models/index');
 const bcrypt = require('bcrypt');
 const catchAsync = require('./../utils/catchAsync');
 var fs = require('fs');
@@ -9,14 +9,11 @@ const sequelize = require('../utils/db_connect');
 //console.log(User);
 let i = 0;
 const createUser = catchAsync(async (user) => {
-    //let user = req.body;
-    //user = JSON.parse(user);
-    //console.log(user.password);
     let password = user.password;
-    //console.log(process.env.SALT_ROUNDS)
+    //User.create(user);
+    //console.log(`New user created => ${user.first_name} ${user.last_name}`)
+
     bcrypt.genSalt(parseInt(process.env.SALT_ROUNDS), function (err, salt) {
-        //console.log('here' + i);
-        i++;
         if (err) {
             console.error(err);
         } else {
@@ -36,9 +33,13 @@ const createUser = catchAsync(async (user) => {
     });
 
 });
-//From another project
+
+const createArticle = catchAsync(async (article) => {
+    Article.create(article);
+})
+//taken from other project
 const csvImport = catchAsync(async () => {
-    await sequelize.sync({ force: true });
+    //await sequelize.sync({ force: true });
     console.log('Starting CSV Import 🔧')
     //Hard coded directory has been used.
     //Put your path here...
@@ -73,7 +74,7 @@ const csvImport = catchAsync(async () => {
 
             var parser = parse({ columns: true, cast: false }, function (err, records) {
                 records.forEach((el) => {
-                    createUser(el);
+                    createArticle(el);
                 })
             });
             fs.createReadStream(currFilePath).pipe(parser);

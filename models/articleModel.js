@@ -21,7 +21,7 @@ Article.init(
             type: DataTypes.STRING,
         },
         content: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
         },
         read_duration: {
             type: DataTypes.STRING,
@@ -51,3 +51,5 @@ Article.init(
         modelName: 'article',
     }
 );
+
+module.exports = Article;
