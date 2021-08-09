@@ -23,7 +23,7 @@ Article.init(
         content: {
             type: DataTypes.TEXT,
         },
-        read_duration: {
+        stats: {
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: 10

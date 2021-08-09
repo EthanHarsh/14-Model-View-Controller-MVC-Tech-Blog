@@ -1,9 +1,9 @@
 const { User } = require('./../models/index');
-const becrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 const { responder, postResponder, updateResponder, deleteResponder } = require('./../utils/responders/index');
 const catchAsync = require('../utils/catchAsync');
-const { ExpressHandlebars } = require('express-handlebars');
+
 
 exports.getAll = catchAsync(async (req, res, next) => {
     responder(res, await User.findAll());
@@ -26,7 +26,7 @@ exports.auth = catchAsync(async (req, res, next) => {
     if (db_user.length > 0) {
         db_user = db_user[0].dataValues;
         //console.log(db_user);
-        becrypt.compare(user.password, db_user.password, function (err, result) {
+        bcrypt.compare(user.password, db_user.password, function (err, result) {
             if (err) {
                 console.error(err);
             } else {
