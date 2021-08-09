@@ -7,7 +7,7 @@ var session = require('express-session')
 
 const app = express();
 
-app.engine('handlebars', bars());
+app.engine('handlebars', bars({ extname: '.handlebars' }));
 app.set('view engine', 'handlebars')
 
 app.use(express.json());

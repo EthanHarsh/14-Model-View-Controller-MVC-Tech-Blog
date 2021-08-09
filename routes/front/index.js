@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const catchAsync = require('./../../utils/catchAsync');
 
-router.get('/', function (req, res) {
+router.get('/', catchAsync(async function (req, res) {
     res.render('home');
-});
+}));
 
 router.get('/dashboard', function (req, res) {
     res.render('dashboard');
