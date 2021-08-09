@@ -1,34 +1,35 @@
 <video id="videoBG" autoplay muted loop>
     <source src="video/mesh.mp4" type="video/mp4">
+    <source src="video/mesh/mesh.webm" type="video/webm">
 </video>
 <main class="container animate__animated animate__fadeIn m-5-top">
     <div class="row border-grey corner-med p-1">
-        <form class="col s12">
+        <form class="col s12" method="POST" action="/api/v1/users/auth/signup">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate grey-text">
+                    <input id="first_name" type="text" class="validate grey-text" name="first_name">
                     <label for="first_name">First Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate grey-text">
+                    <input id="last_name" type="text" class="validate grey-text" name="last_name">
                     <label for="last_name">Last Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate grey-text">
+                    <input id="email" type="email" class="validate grey-text" name="email">
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="password" type="password" class="validate grey-text">
+                    <input id="password" type="password" class="validate grey-text" name="password">
                     <label for="password">Password</label>
                 </div>
             </div>
             <button
                 class="btn-large waves-effect waves-light m-1-top corner-med transparent border-grey grey-text text-lighten-3 roboto 400"
-                type="submit" name="action">Register
+                id="loginbtn" type="submit" vale="Submit">Register
                 <i class="material-icons right">check</i>
             </button>
         </form>
