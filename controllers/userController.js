@@ -59,8 +59,9 @@ exports.authCheck = catchAsync(async (req, res, next) => {
 })
 
 exports.logOut = catchAsync(async (req, res, next) => {
+    console.log('logout')
     req.session.destroy();
-    deleteResponder(res);
+    res.redirect('/')
 })
 
 exports.createNew = catchAsync(async (req, res, next) => {

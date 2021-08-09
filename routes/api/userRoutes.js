@@ -11,6 +11,6 @@ router.get('/auth', userController.authCheck);
 
 router.post('/auth', userController.auth);
 
-router.delete('/auth', userController.logOut);
+router.get('/auth/logout', userController.logOut);
 
 module.exports = router;
