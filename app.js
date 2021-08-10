@@ -37,6 +37,8 @@ app.use((req, res, next) => {
 });
 
 app.use(routes);
-
+app.get('*', async (req, res) => {
+    res.render('fourOhFour');
+});
 
 module.exports = app;

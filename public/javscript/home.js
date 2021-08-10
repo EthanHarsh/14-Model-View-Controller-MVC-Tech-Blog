@@ -1,3 +1,5 @@
+$('#nav-home').addClass('active');
+
 fetch('/api/v1/articles/topics')
     .then(data => data.json())
     .then(data => {

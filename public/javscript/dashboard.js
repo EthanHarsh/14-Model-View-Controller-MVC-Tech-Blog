@@ -1,0 +1,1 @@
+$('#nav-dash').addClass('active');
