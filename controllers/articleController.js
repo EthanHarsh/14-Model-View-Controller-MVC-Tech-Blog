@@ -51,7 +51,7 @@ exports.createNew = catchAsync(async (req, res, next) => {
 
     article.user_id = user_id[0].dataValues.id;
     await Article.create(article);
-    res.redirect('/')
+    res.redirect('/success')
 })
 
 exports.getArticle = catchAsync(async (req, res, next) => {

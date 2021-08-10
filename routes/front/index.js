@@ -10,12 +10,15 @@ router.get('/dashboard', function (req, res) {
 });
 
 router.get('/login', function (req, res) {
-    console.log(req.session)
     res.render('login');
 });
 
 router.get('/signup', function (req, res) {
     res.render('signup');
+});
+
+router.get('/success', function (req, res) {
+    res.render('success');
 });
 
 router.get('/:title', function (req, res) {
