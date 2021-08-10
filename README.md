@@ -8,7 +8,7 @@
 
 ## Description
 
-Putting together an ecommerce site backend.
+Write about the hottest tech!
 
 ## Project Goals:
 
