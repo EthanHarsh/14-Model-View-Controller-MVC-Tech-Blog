@@ -4,7 +4,7 @@
 
 ## Application Screenshot
 
-![Screenshot](https://youtu.be/HwXzndi7PP0)
+![Screenshot](public/img/screenshot.png)
 
 ## Description
 
