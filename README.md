@@ -2,6 +2,9 @@
 
 ![Node.js Badge](https://img.shields.io/badge/JavaScript-Node.js-green) ![CLI Badge](https://img.shields.io/badge/Node.js-CLI-green) ![MySql Badge](https://img.shields.io/badge/DB-MySQL-blue) ![OSU Bootcamp Badge](https://img.shields.io/badge/OSU-Bootcamp-red)
 
+## Deployment
+[Demo-Blog](https://demo-blog.ethanharsh.com/)
+
 ## Application Screenshot
 
 ![Screenshot](public/img/screenshot.png)
